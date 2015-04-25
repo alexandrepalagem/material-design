@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Template</title>
+  <link rel="stylesheet" href="css/main.min.css" />
+</head>
+
+<body>
+
+  <button class="btn eff"><i class="fa fa-eye"></i>Button</button>
+  <button class="btn eff"><i class="fa fa-eye"></i>Button</button>
+  <button class="btn eff"><i class="fa fa-eye"></i>Button</button>
+  <button class="btn eff"><i class="fa fa-eye"></i>Button</button>
+
+
+  <script src="vendor/jquery/dist/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script>
+  $(function(){
+
+    $(".eff").on("mousedown", function(e) {
+
+      var x = e.pageX;
+      var y = e.pageY;
+      var clickY = y - $(this).offset().top;
+      var clickX = x - $(this).offset().left;
+
+      var el = this;
+
+      var setX = parseInt(clickX);
+      var setY = parseInt(clickY);
+      $(this).find("svg").remove();
+      $(this).append('<svg><circle cx="' + setX + '" cy="' + setY + '" r="' + 0 + '"></circle></svg>');
+
+      var size = 0;
+      if ($(el).width() > $(el).height()) {
+        size = $(el).outerWidth();
+      } else {
+        size = $(el).outerHeight();
+      }
+
+
+
+      var c = $(el).find("circle");
+      c.animate({
+        "r": size * 2
+      }, {
+        duration: 700,
+        step: function(val) {
+          c.attr("r", val);
+        },
+        complete: function() {
+          c.fadeOut(900);
+        }
+
+      });
+    });
+
+  });
+  </script>
+</body>
+</html>
