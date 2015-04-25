@@ -1,13 +1,19 @@
 body {
   background: #3d3d3d;
-  margin: 30px;
+  margin: 330px;
   font-family: Roboto, sans-serif;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .btn {
   transition: all 0.3s ease;
   
-  padding: 15px 45px;
+  padding: 15px 35px;
   border: 1px solid #546E7A;
   background: #607D8B;
   color: #fff;
@@ -15,11 +21,13 @@ body {
   cursor: pointer;
   text-decoration: none;
   font-weight: 100;
+  display: inline-block;
   
   .fa {
     margin-right: 8px;
   }
   
+  &.focus,
   &:focus {
     outline: none;
     
@@ -28,11 +36,11 @@ body {
       content: "";
       position: absolute;
       background: rgba(255, 255, 255, 0.12);
-      width: 76%;
-      height: 200%;
       z-index: 99;
-      left: 14%;
+      left: 20%;
+      right: 20%;
       top: -50%;
+      bottom: -50%;
       border-radius: 200%;
       -webkit-animation: gira ease 1.2s infinite;
     }
@@ -44,9 +52,8 @@ body {
     
     &:before {
       opacity: 0;
-      width: 100%;
-      left: 0;
-      right: 0;
+      left: -10%;
+      right: -10%;
     }
   }
   
