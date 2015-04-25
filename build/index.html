@@ -8,8 +8,13 @@
 
 <body>
 
-  <button class="btn eff focus"><i class="fa fa-eye"></i>Button</button>
-  <button class="btn eff"><i class="fa fa-eye"></i>Button</button>
+<h1>Material Design - Button ripple effect</h1>
+
+  
+  <button class="btn eff focus">Button :focus</button>
+  <button class="btn eff"></i>Button</button>
+  <button class="btn eff color-2"></i>Button</button>
+  <button class="btn btn-link eff"></i>Link button</button>
 
 
   <script src="vendor/jquery/dist/jquery.min.js"></script>
@@ -49,7 +54,7 @@
           c.attr("r", val);
         },
         complete: function() {
-          c.fadeOut(900);
+          c.fadeOut(400);
         }
 
       });
